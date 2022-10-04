@@ -4,3 +4,7 @@
 article {
   margin-top: 5px;
 }
+
+.blueFont {
+  color: rgb(0, 110, 255);
+}
