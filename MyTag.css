@@ -1,0 +1,12 @@
+[class^='MyTag'] {
+  border-width: 3px;
+  border-style: solid;
+}
+
+.MyTagLight {
+  border-color: lightGreen;
+}
+
+.MyTagDark {
+  border-color: red;
+}

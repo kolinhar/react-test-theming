@@ -1,0 +1,12 @@
+[class^='_ModuleTag'] {
+  border-width: 3px;
+  border-style: solid;
+}
+
+.ModuleTagLight {
+  border-color: lightGreen;
+}
+
+.ModuleTagDark {
+  border-color: blue;
+}
