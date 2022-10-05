@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material/styles';
 
 import styles from './WithSaasTagModule.module.scss';
 
-const SaasTag = () => {
+const SaasTagModule = () => {
   const theme = useTheme();
 
   return (
@@ -14,7 +14,7 @@ const SaasTag = () => {
           : styles.MySTagMDark
       }
     >
-      <h1>WithSaasTag</h1>
+      <h1>WithSaasTagModule</h1>
       <p>works with dynamic class names</p>
       Imports like this:&nbsp;
       <code>import styles from './WithSaasTagModule.scss'</code>
@@ -24,4 +24,4 @@ const SaasTag = () => {
   );
 };
 
-export default SaasTag;
+export default SaasTagModule;

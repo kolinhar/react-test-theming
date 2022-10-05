@@ -10,3 +10,7 @@
 .MySaasTagDark {
   border-color: violet;
 }
+
+.white [class^='MySaasTag'] {
+  border-color: #fff;
+}

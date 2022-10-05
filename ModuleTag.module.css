@@ -10,3 +10,7 @@
 .ModuleTagDark {
   border-color: blue;
 }
+
+[class^='white'] [class^='_ModuleTag'] {
+  border-color: white;
+}

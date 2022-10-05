@@ -15,35 +15,66 @@ const ColorModeContext = createContext({ toggleColorMode: () => {} });
 function MyApp() {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
+
+  const [forceWhite, setForceWhite] = useState<'white' | ''>('');
+
+  const changeToWhite = React.useCallback(() => {
+    setForceWhite((oldVal) => {
+      if (oldVal === 'white') {
+        return '';
+      }
+      return 'white';
+    });
+  }, []);
+
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        maxWidth: '90%',
-        bgcolor: 'background.default',
-        color: 'text.primary',
-        borderRadius: 1,
-        p: 3,
-      }}
-    >
-      {theme.palette.mode} mode
-      <IconButton
-        sx={{ ml: 1 }}
-        onClick={colorMode.toggleColorMode}
-        color="inherit"
+    <main className={forceWhite}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          maxWidth: '90%',
+          bgcolor: 'background.default',
+          color: 'text.primary',
+          borderRadius: 1,
+          p: 3,
+        }}
       >
-        {theme.palette.mode === 'dark' ? (
-          <Brightness7Icon />
-        ) : (
-          <Brightness4Icon />
-        )}
-      </IconButton>
-      <MyTag />
-      <ModuleTag />
-      <WithSaasTag />
-      <WithSaasTagModule />
-    </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            maxWidth: '90%',
+            bgcolor: 'background.default',
+            color: 'text.primary',
+            borderRadius: 1,
+            p: 3,
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            {theme.palette.mode} mode
+            <IconButton
+              sx={{ ml: 1 }}
+              onClick={colorMode.toggleColorMode}
+              color="inherit"
+            >
+              {theme.palette.mode === 'dark' ? (
+                <Brightness7Icon />
+              ) : (
+                <Brightness4Icon />
+              )}
+            </IconButton>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <button onClick={changeToWhite}>force white theme</button>
+          </div>
+        </Box>
+        <MyTag />
+        <ModuleTag />
+        <WithSaasTag />
+        <WithSaasTagModule />
+      </Box>
+    </main>
   );
 }
 

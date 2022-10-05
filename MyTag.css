@@ -10,3 +10,7 @@
 .MyTagDark {
   border-color: red;
 }
+
+.white [class^='MyTag'] {
+  border-color: white;
+}

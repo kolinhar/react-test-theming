@@ -10,3 +10,7 @@
 .MySTagMDark {
   border-color: aqua;
 }
+
+[class^='white'] [class^='_MySTagM'] {
+  border-color: #fff;
+}
