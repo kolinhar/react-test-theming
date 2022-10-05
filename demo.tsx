@@ -19,6 +19,7 @@ function MyApp() {
   const [forceWhite, setForceWhite] = useState<'white' | ''>('');
 
   const changeToWhite = React.useCallback(() => {
+    //just add/remove a class to parent element
     setForceWhite((oldVal) => {
       if (oldVal === 'white') {
         return '';
@@ -43,16 +44,19 @@ function MyApp() {
         <Box
           sx={{
             display: 'flex',
-            alignItems: 'center',
+            justifyContent: 'center',
             maxWidth: '90%',
             bgcolor: 'background.default',
             color: 'text.primary',
             borderRadius: 1,
             p: 3,
+            gap: 5,
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {theme.palette.mode} mode
+            {theme.palette.mode} mode using
+            <br />
+            MUI context
             <IconButton
               sx={{ ml: 1 }}
               onClick={colorMode.toggleColorMode}
@@ -65,9 +69,11 @@ function MyApp() {
               )}
             </IconButton>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <button onClick={changeToWhite}>force white theme</button>
-          </div>
+          <button onClick={changeToWhite}>
+            force {forceWhite ? 'default' : 'white'} theme
+            <br />
+            with CSS rules
+          </button>
         </Box>
         <MyTag />
         <ModuleTag />
