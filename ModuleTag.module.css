@@ -1,4 +1,4 @@
-[class^='_ModuleTag'] {
+[class*='ModuleTag'] {
   border-width: 3px;
   border-style: solid;
 }
@@ -11,6 +11,6 @@
   border-color: blue;
 }
 
-[class^='white'] [class^='_ModuleTag'] {
+[class~='white'] [class*='ModuleTag'] {
   border-color: white;
 }

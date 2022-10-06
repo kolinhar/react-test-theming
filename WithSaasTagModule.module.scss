@@ -1,4 +1,4 @@
-[class^='_MySTagM'] {
+[class*='MySTagM'] {
   border-width: 3px;
   border-style: solid;
 }
@@ -11,6 +11,6 @@
   border-color: aqua;
 }
 
-[class^='white'] [class^='_MySTagM'] {
+[class~='white'] [class*='MySTagM'] {
   border-color: #fff;
 }
